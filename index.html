@@ -182,7 +182,8 @@
             if (slideIndex > slides.length) { slideIndex = 1 }//到第六個時回到第一個
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(' active', '');
-            }//遍歷
+            }//https://stackoverflow.com/questions/195951/how-can-i-change-an-elements-class-with-javascript
+            //遍歷
             slides[slideIndex - 1].style.display = 'block';//出現的圖片編號n-1,顯示用block
             dots[slideIndex - 1].className += ' active';//active前面要加空格
             setTimeout(showSlides, 4000);
