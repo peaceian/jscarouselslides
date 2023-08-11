@@ -137,6 +137,7 @@
 
 
     <!--<script>
+    //手動跟自動不同的位置
         let slideIndex = 1;
         showSlides(slideIndex);
         //當左右移動鍵被碰到，就會執行，往左是-1，往右是+1
@@ -153,13 +154,16 @@
             let i;
             let slides = document.getElementsByClassName('mySlideshows');
             let dots = document.getElementsByClassName('dot');
+
+    
             if (n > slides.length) {slideIndex = 1}//設定只要現在超過輪播圖片最後一張，設定回到第一張
             if (n < 1) {slideIndex = slides.length}//小於第一張就會回到最後一張
             //(if條件句()括號裡為true,則執行{}大括號裡的程式碼)
+
+
+    
             //將CSS中圖片區塊的display取消=將css得display這個屬性消失=讓圖片顯現
-            for (i = 0; i < slides.length; i++){
-                slides[i].style.display='none';
-            }
+            for (i = 0; i < slides.length; i++){slides[i].style.display='none';}
             //清除所有圓點按鈕的'.active'空格要一致，讓黑點變回淺色*****
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(' active', '');
@@ -177,15 +181,21 @@
             let i;
             let slides = document.getElementsByClassName('mySlideshows');
             let dots = document.getElementsByClassName('dot');
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = 'none'; } //cancel the left and right chosen and back to ahead.
-            slideIndex++;//slideIndex遞增
+
+            
             if (slideIndex > slides.length) { slideIndex = 1 }//到第六個時回到第一個
+            slideIndex++;//slideIndex遞增
+
+            
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = 'none'; } //cancel the left and right chosen and back to ahead.
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(' active', '');
             }//https://stackoverflow.com/questions/195951/how-can-i-change-an-elements-class-with-javascript
             //遍歷
             slides[slideIndex - 1].style.display = 'block';//出現的圖片編號n-1,顯示用block
             dots[slideIndex - 1].className += ' active';//active前面要加空格
+            
+            //autotimer
             setTimeout(showSlides, 4000);
         }
 
