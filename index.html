@@ -181,13 +181,9 @@
             let i;
             let slides = document.getElementsByClassName('mySlideshows');
             let dots = document.getElementsByClassName('dot');
-
-            
-            if (slideIndex > slides.length) { slideIndex = 1 }//到第六個時回到第一個
-            slideIndex++;//slideIndex遞增
-
-            
             for (i = 0; i < slides.length; i++) { slides[i].style.display = 'none'; } //cancel the left and right chosen and back to ahead.
+            slideIndex++;//slideIndex遞增
+            if (slideIndex > slides.length) { slideIndex = 1 }//到第六個時回到第一個
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(' active', '');
             }//https://stackoverflow.com/questions/195951/how-can-i-change-an-elements-class-with-javascript
